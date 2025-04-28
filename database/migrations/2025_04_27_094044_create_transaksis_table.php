@@ -16,7 +16,7 @@ class CreateTransaksisTable extends Migration
             $table->unsignedBigInteger('maskapai_id'); // relasi ke maskapais
             $table->integer('jumlah_tiket');
             $table->integer('total_harga');
-            $table->enum('status', ['Pending', 'Confirmed', 'Rejected'])->default('Pending');
+            $table->enum('status', ['Pending', 'Confirmed'])->default('Pending');
             $table->timestamps();
 
             $table->foreign('maskapai_id')->references('id')->on('maskapais')->onDelete('cascade');

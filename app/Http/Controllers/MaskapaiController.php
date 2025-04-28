@@ -43,4 +43,12 @@ class MaskapaiController extends Controller
         $maskapai->delete();
         return redirect()->route('maskapais.index');
     }
+
+    public function tiket()
+{
+    $maskapais = Maskapai::all();
+    return view('tiket', compact('maskapais'));
+}
+
+
 }

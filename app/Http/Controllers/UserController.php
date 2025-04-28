@@ -27,7 +27,7 @@ class UserController extends Controller
             'name'     => 'required|string|max:255',
             'email'    => 'required|email|unique:users,email',
             'password' => 'required|string|min:6',
-            'role'     => 'required|in:user,admin,petugas',
+            'role'     => 'required|in:user,admin,maskapai',
         ]);
 
         User::create([
@@ -53,7 +53,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'role' => 'required|in:user,admin,petugas',
+            'role' => 'required|in:user,admin,maskapai',
         ]);
 
         $user = User::findOrFail($id);

@@ -29,7 +29,7 @@ class LoginController extends Controller
 
             if ($user->role === 'user') {
                 return redirect('/');
-            } elseif (in_array($user->role, ['admin', 'petugas'])) {
+            } elseif (in_array($user->role, ['admin', 'maskapai'])) {
                 return redirect('/dashboard');
             }
         }
